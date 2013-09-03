@@ -1,0 +1,14 @@
+
+
+		<h2>Login</h2>
+		<%= simple_form_for @user_session, :as => :user_session, :url => { :action => "create" }, :html => { :class => 'form-horizontal' } do |f| %>
+				<%= render "shared/error_messages", :target => @user_session %>
+				<%= f.input :login, label: 'Login: ' %>
+				<%= f.input :password, label: 'Password: ' %>
+				<%= f.input :remember_me, as: :boolean %>
+				<div class="form-actions">
+						<%= f.button :submit, :value => "Login" %>
+				</div>
+		<% end %>
+
+

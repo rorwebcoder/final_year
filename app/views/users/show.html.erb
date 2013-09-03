@@ -1,0 +1,17 @@
+
+<div style="float: right;">
+		Welcome <%= @user.login %>!, 
+		<%= link_to "Logout", logout_path, :method => :delete %>
+</div>
+
+<p>
+<b>Login:</b>
+<%=h @user.login %>
+</p>
+<p>
+<b>Email:</b>
+<%=h @user.email %>
+</p>
+
+
+<%= link_to 'Edit Account', edit_account_path %>
