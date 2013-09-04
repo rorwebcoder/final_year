@@ -1,8 +1,5 @@
 
-<div style="float: right;">
-		Welcome <%= @user.login %>!, 
-		<%= link_to "Logout", logout_path, :method => :delete %>
-</div>
+<h2>View Account</h2>
 
 <p>
 <b>Login:</b>
@@ -11,6 +8,14 @@
 <p>
 <b>Email:</b>
 <%=h @user.email %>
+</p>
+<p>
+<b>Register Number:</b>
+<%=h @user.register_number %>
+</p>
+<p>
+<b>Mobile Number:</b>
+<%=h @user.mobile_number %>
 </p>
 
 

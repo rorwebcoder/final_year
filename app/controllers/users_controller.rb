@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
 		before_filter :require_user, :only => [:edit, :show, :update]
 		before_filter :require_no_user, :only => [:new, :create]
+  before_filter :block_admin_creation, :only => [:create]
+  layout "before_login", :only => [:new, :create]
+  # Cancan check role and authorize user based
+  load_and_authorize_resource
 		
 		def new
     @user = User.new
@@ -37,6 +41,15 @@ class UsersController < ApplicationController
       redirect_to account_url
     else
       render :action => :edit
+    end
+  end
+  
+  def unauthorized
+  end
+  
+  def block_admin_creation
+    if params[:user] && params[:user][:role].downcase == "admin"
+      params[:user][:role] = "student"
     end
   end
 end

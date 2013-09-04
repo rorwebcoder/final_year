@@ -43,3 +43,5 @@ gem 'authlogic', :git => 'git://github.com/binarylogic/authlogic.git'
 
 gem 'simple_form'
 
+# Role based authorization
+gem "cancan"

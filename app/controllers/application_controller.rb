@@ -4,6 +4,10 @@ class ApplicationController < ActionController::Base
   #filter_parameter_logging :password, :password_confirmation # there are underscores :-| 
 
   helper_method :current_user_session, :current_user
+  
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to unauthorized_access_path
+  end
 
   private
   def current_user_session

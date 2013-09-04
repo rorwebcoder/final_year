@@ -31,6 +31,9 @@ ActiveRecord::Schema.define(:version => 20130712003722) do
     t.string   "persistence_token"
     t.string   "single_access_token"
     t.string   "perishable_token"
+    t.string   "register_number"
+    t.string   "mobile_number"
+    t.string   "role"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
   end

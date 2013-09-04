@@ -231,13 +231,14 @@ body {
 }
 
 a {
-  color: #0088cc;
-  text-decoration: none;
+  /*color: #0088cc;*/
+  /*text-decoration: none;*/
+   color: #333333;
 }
 
 a:hover,
 a:focus {
-  color: #005580;
+  /*color: #005580;*/
   text-decoration: underline;
 }
 
@@ -3559,6 +3560,7 @@ button.btn,
 input[type="submit"].btn {
   *padding-top: 3px;
   *padding-bottom: 3px;
+  color: #333333;
 }
 
 button.btn::-moz-focus-inner,

@@ -8,6 +8,9 @@ class CreateUsers < ActiveRecord::Migration
       t.string :persistence_token
       t.string :single_access_token
       t.string :perishable_token
+      t.string :register_number
+      t.string :mobile_number
+      t.string :role
       t.timestamps
     end
   end

@@ -9,6 +9,8 @@ LoginDemo::Application.routes.draw do
   resource :user, :as => 'account'  # a convenience route
 
   match 'signup' => 'users#new', :as => :signup
+  
+  match 'unauthorized_access' => 'users#unauthorized', :as => :unauthorized_access
 
   #~ root :to => 'users#new'
   root :to => 'user_sessions#new'
