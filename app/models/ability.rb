@@ -2,13 +2,12 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    
     if user.admin?
       can :manage, :all
     elsif user.staff?
       
     elsif user.student?
-      #~ can :read, :all
+      can :manage, [User]
       #~ can [:read, :unauthorized], [User]
     end
     
