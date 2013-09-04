@@ -5,7 +5,7 @@ class Ability
     if user.admin?
       can :manage, :all
     elsif user.staff?
-      
+      can :manage, [User]
     elsif user.student?
       can :manage, [User]
       #~ can [:read, :unauthorized], [User]
