@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   
   validates :register_number, presence: true
   validates :mobile_number, presence: true
+  validates :role, presence: true
   
   def admin?
     role == "admin"

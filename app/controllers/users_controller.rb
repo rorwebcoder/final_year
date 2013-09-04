@@ -3,8 +3,10 @@ class UsersController < ApplicationController
 		before_filter :require_no_user, :only => [:new, :create]
   before_filter :block_admin_creation, :only => [:create]
   layout "before_login", :only => [:new, :create]
+  
   # Cancan check role and authorize user based
   load_and_authorize_resource
+  skip_load_and_authorize_resource :only => [:new, :create]
 		
 		def new
     @user = User.new
