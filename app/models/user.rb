@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   
   acts_as_authentic
   
-  validates :register_number, presence: true
+  validates :register_number, presence: true, if: Proc.new { |user| user.student? }
   validates :mobile_number, presence: true
   validates :role, presence: true
   

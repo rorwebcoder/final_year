@@ -1,5 +1,5 @@
 
-
+<div id="loginContainer">
 		<h2>Login</h2>
 		<%= simple_form_for @user_session, :as => :user_session, :url => { :action => "create" }, :html => { :class => 'form-horizontal' } do |f| %>
 				<%= render "shared/error_messages", :target => @user_session %>
@@ -11,5 +11,6 @@
 				</div>
 		<% end %>
 
-<div>Create a new account by signup with us.</div>
-<%= link_to "Sign up", signup_path %>
+		<div>Create a new account by signup with us.</div>
+		<%= link_to "Sign up", signup_path %>
+</div>

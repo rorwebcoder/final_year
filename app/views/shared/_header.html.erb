@@ -1,33 +1,26 @@
-<div id="header">
-		<% if current_user %>
-				<div style="float: right; text-align: right;">
-						Welcome <%= current_user.login %>!, 
-						<%= link_to "Logout", logout_path, :method => :delete %>
-				</div>
-		<% end %>
-		<div>
-				<div class="logo">
-						<%= link_to "iReminder", root_path %>
-				</div>
-				<% if current_user %>
-						<ul id="navigation">
-								<li class="<%= (params[:controller] == "users" && (["show", "edit", "update"].include?(params[:action]))) ? 'active' : '' %>">
-										<%= link_to "My Account", account_path %>
-								</li>
-								<li>
-										<%= link_to "Events", "#" %>
-								</li>
-								<li>
-										<a href="news.html">News</a>
-								</li>
-								<li>
-										<a href="about.html">About</a>
-								</li>
-								<li>
-										<a href="contact.html">Contact</a>
-								</li>
+
+<div id="header-wrapper">
+		<div id="header">
+				<div id="menu1">
+						<ul>
+								<% if current_user %>
+										<li class="<%= ((params[:controller] == 'users') && (%w(show update edit).include?(params[:action]))) ? 'current_page_item' : '' %>"><%= link_to "My Account", account_path %></li>
+										<li><%= link_to "Events", "#" %></li>
+								<% end %>
 						</ul>
-				<% end %>
+				</div>
+				<div id="logo">
+						<h1><%= link_to "iReminder", root_path %></h1>
+						<p>An Intelligent Reminder System</p>
+				</div>
+				<div id="menu2">
+						<ul>
+								<% if current_user %>
+										<li style="margin-top: 13px; width: 200px;"><span id="displayUserName">Welcome <%= current_user.login %> | <%= current_user.role.titleize %></span></li>
+										<li><%= link_to "Logout", logout_path, :method => :delete %></li>
+								<% end %>
+						</ul>
+				</div>
 		</div>
 </div>
 	

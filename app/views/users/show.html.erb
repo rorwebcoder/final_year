@@ -9,10 +9,12 @@
 <b>Email:</b>
 <%=h @user.email %>
 </p>
-<p>
-<b>Register Number:</b>
-<%=h @user.register_number %>
-</p>
+<% if @user.student? %>
+		<p>
+				<b>Register Number:</b>
+				<%=h @user.register_number %>
+		</p>
+<% end %>
 <p>
 <b>Mobile Number:</b>
 <%=h @user.mobile_number %>

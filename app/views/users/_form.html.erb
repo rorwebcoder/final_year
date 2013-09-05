@@ -6,9 +6,12 @@
 <%= form.input :password_confirmation, label: '<abbr title="required">*</abbr> Password Confirmation: '.html_safe %>
 <%= form.input :register_number, label: 'Register Number: ' %>
 <%= form.input :mobile_number, label: 'Mobile Number: ' %>
-<div>
-		<label for="user_role" class="string required control-label"><abbr title="required">*</abbr> Role:</label>
-		<div class="controls">
-				<%= form.collection_select :role, User::ROLES, :to_s, :humanize %>
+
+<% if params[:action] == "new" || params[:action] == "create" %>
+		<div>
+				<label for="user_role" class="string required control-label"><abbr title="required">*</abbr> Role:</label>
+				<div class="controls">
+						<%= form.collection_select :role, User::ROLES, :to_s, :humanize %>
+				</div>
 		</div>
-</div>
+<% end %>

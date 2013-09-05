@@ -6,15 +6,20 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-		<%= render :partial => "shared/header" %>
-		
-		<div class="" id="contents">
-				<%= yield %>
+<body>		
+		<div id="wrapper">
+				<%= render :partial => "shared/header" %>
+	
+				<div id="page">
+						<div id="page-bgtop">
+								<div id="page-bgbtm">
+										<%= yield %>
+										<div style="clear: both;">&nbsp;</div>
+								</div>
+						</div>
+				</div>
+				
 		</div>
-		
 		<%= render :partial => "shared/footer" %>
-		
 </body>
 </html>
