@@ -1,0 +1,13 @@
+
+<h4>View Event</h4>
+
+<div id="content">
+		<div class="post">
+				<h2 class="title"><%= @event.title %></h2>
+				<div class="entry">
+						<p><%= @event.description %></p>
+						<p>Starts at: <%= time_display @event.start_date %></p>
+						<p>Ends at: <%= time_display @event.end_date %></p>
+				</div>
+		</div>
+</div>

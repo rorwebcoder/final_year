@@ -6,8 +6,10 @@ class Ability
       can :manage, :all
     elsif user.staff?
       can :manage, [User]
+      can :read, Event
     elsif user.student?
       can :manage, [User]
+      can :read, Event
       #~ can [:read, :unauthorized], [User]
     end
     

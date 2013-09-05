@@ -1,0 +1,6 @@
+
+<%= form.input :title, label: 'Title: '.html_safe %>
+<%= form.input :start_date, label: 'Start Date: '.html_safe, class: "datepicker" %>
+<%= form.input :end_date, label: 'End Date: '.html_safe, class: "datepicker" %>
+<%= form.input :description, label: 'Description: '.html_safe, as: :text, :input_html => {:rows => 5, :cols => 30} %>
+

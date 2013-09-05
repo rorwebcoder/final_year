@@ -1,5 +1,6 @@
 LoginDemo::Application.routes.draw do
   
+  resources :events
   resources :user_sessions
 
   match 'login' => "user_sessions#new",      :as => :login

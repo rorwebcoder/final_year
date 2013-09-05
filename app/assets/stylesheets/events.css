@@ -1,0 +1,13 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+a.titleLink {
+  padding-left: 0px !important;
+  text-decoration: underline;
+}
+
+tr.header {
+  font-size: 18px;
+}

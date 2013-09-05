@@ -1,0 +1,38 @@
+
+<% if current_user.admin? %>
+		<div>
+				<%= link_to "Add New Event", new_event_path %>
+		</div>
+<% end %>
+
+		<div id="sidebar" style="float: left;width: 500px;">
+		<ul>
+		<li>
+		<h2>Events List</h2>
+		<ul>
+				<% if @events.empty? %>
+						No Events available to display.
+				<% else %>						
+						<table width="100%" border="1">
+								<tr class="header">
+										<td width="25%">Title</td><td width="50%">Description</td><td width="25%">Actions</td>
+								</tr>
+								<% @events.each do |event| %>
+										<tr>
+												<td><%= link_to event.title, event_path(event), :class => "titleLink" %></td>
+												<td><%= event.description %></td>
+												<td>
+														<% if current_user.admin? %>
+																<%= link_to "Edit", edit_event_path(event) %> | <%= link_to "Delete", event_path(event), :method => :delete, :confirm => "Are you sure want to delete Event?" %>
+														<% else %>
+																--
+														<% end %>
+												</td>
+										</tr>
+								<% end %>
+						</table>
+				<% end %>
+		</ul>
+		</li>
+		</ul>
+		</div>	

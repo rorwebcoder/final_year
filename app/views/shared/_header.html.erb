@@ -5,7 +5,7 @@
 						<ul>
 								<% if current_user %>
 										<li class="<%= ((params[:controller] == 'users') && (%w(show update edit).include?(params[:action]))) ? 'current_page_item' : '' %>"><%= link_to "My Account", account_path %></li>
-										<li><%= link_to "Events", "#" %></li>
+										<li class="<%= (params[:controller] == 'events') ? 'current_page_item' : '' %>"><%= link_to "Events", events_path %></li>
 								<% end %>
 						</ul>
 				</div>
