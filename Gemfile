@@ -45,3 +45,6 @@ gem 'simple_form'
 
 # Role based authorization
 gem "cancan"
+
+# To handle attachments
+gem "paperclip", "~> 3.0"

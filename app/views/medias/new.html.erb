@@ -1,0 +1,10 @@
+
+<h2>Upload Event</h2>
+
+<%= simple_form_for @media, :url => medias_path, :html => { :class => 'form-horizontal' } do |f| %>
+		<%= f.file_field :document %>
+		<div class="form-actions">
+				<%= f.button :submit, :value => "Upload" %>
+		</div>
+<% end %>
+  

@@ -1,5 +1,9 @@
 LoginDemo::Application.routes.draw do
   
+  resources :medias do
+    get 'process_document'
+  end
+  
   resources :events
   resources :user_sessions
 

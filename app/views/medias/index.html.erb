@@ -1,0 +1,37 @@
+
+<% if current_user.admin? %>
+		<div>
+				<%= link_to "Upload Event", new_media_path %>
+		</div>
+<% end %>
+
+		<div id="sidebar" style="float: left;width: 500px;">
+		<ul>
+		<li>
+		<h2>File List</h2>
+		<ul>
+				<% if @medias.empty? %>
+						No Events available to display.
+				<% else %>						
+						<table width="100%" border="1">
+								<tr class="header">
+										<td width="70%">Title</td><td width="30%">Actions</td>
+								</tr>
+								<% @medias.each do |media| %>
+										<tr>
+												<td><%= media.document_file_name %></td>
+												<td>
+														<% if media.is_processed %>
+																Already processed.
+														<% else %>
+																<%= link_to "Process", media_process_document_path(media), :style => "color: #AE4D5A;" %>
+														<% end %>
+												</td>
+										</tr>
+								<% end %>
+						</table>
+				<% end %>
+		</ul>
+		</li>
+		</ul>
+		</div>	
