@@ -2,7 +2,8 @@
 <% if current_user.admin? %>
 		<div>
 				<%= link_to "Add New Event", new_event_path %> | 
-				<%= link_to "Upload Event", new_media_path %>
+				<%= link_to "Upload Event", new_media_path %> | 
+				<%= link_to "Upload List", medias_path %>
 		</div>
 <% end %>
 

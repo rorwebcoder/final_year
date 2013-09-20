@@ -48,3 +48,5 @@ gem "cancan"
 
 # To handle attachments
 gem "paperclip", "~> 3.0"
+
+gem "pdf-reader"

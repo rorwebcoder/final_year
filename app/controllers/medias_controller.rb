@@ -27,7 +27,9 @@ class MediasController < ApplicationController
 		end
 		
 		def process_document
-				
+				@media = Media.find(params[:media_id])
+				@media.extract_events
+				redirect_to medias_path
 		end
 		
 		private
