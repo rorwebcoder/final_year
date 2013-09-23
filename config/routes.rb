@@ -4,7 +4,10 @@ LoginDemo::Application.routes.draw do
     get 'process_document'
   end
   
-  resources :events
+  resources :events do
+    get 'send_invites'
+  end
+  
   resources :user_sessions
 
   match 'login' => "user_sessions#new",      :as => :login

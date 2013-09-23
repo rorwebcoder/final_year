@@ -3,14 +3,15 @@
 <%= form.input :email, label: '<abbr title="required">*</abbr> Email Address: '.html_safe %>
 <%= form.input :password, label: '<abbr title="required">*</abbr> Password: '.html_safe %>
 <%= form.input :password_confirmation, label: '<abbr title="required">*</abbr> Password Confirmation: '.html_safe %>
-<%= form.input :register_number, label: 'Register Number: ' %>
 <%= form.input :mobile_number, label: 'Mobile Number: ' %>
 
 <% if params[:action] == "new" || params[:action] == "create" %>
-		<div>
+		<div class="control-group">
 				<label for="user_role" class="string required control-label"><abbr title="required">*</abbr> Role:</label>
 				<div class="controls">
 						<%= form.collection_select :role, User::ROLES, :to_s, :humanize %>
 				</div>
 		</div>
 <% end %>
+
+<%= form.input :register_number, label: 'Register Number: ' %>

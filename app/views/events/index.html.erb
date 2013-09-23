@@ -7,7 +7,7 @@
 		</div>
 <% end %>
 
-		<div id="sidebar" style="float: left;width: 500px;">
+		<div id="sidebar" style="float: left;width: 700px;">
 		<ul>
 		<li>
 		<h2>Events List</h2>
@@ -17,20 +17,26 @@
 				<% else %>						
 						<table width="100%" border="1">
 								<tr class="header">
-										<td width="25%">Title</td><td width="50%">Description</td><td width="25%">Actions</td>
+										<td width="25%">Title</td><td width="50%">Description</td>
+										<% if current_user.admin? %>
+												<td width="25%">Actions</td>
+										<% end %>
 								</tr>
 								<% @events.each do |event| %>
 										<tr>
 												<td><%= link_to event.title, event_path(event), :class => "titleLink" %></td>
 												<td><%= event.description %></td>
-												<td>
-														<% if current_user.admin? %>
-																<%= link_to "Edit", edit_event_path(event) %> | <%= link_to "Delete", event_path(event), :method => :delete, :confirm => "Are you sure want to delete Event?" %>
-														<% else %>
-																--
-														<% end %>
-												</td>
-										</tr>
+												<% if current_user.admin? %>
+														<td>
+																<%= link_to "Edit", edit_event_path(event) %> | <%= link_to "Delete", event_path(event), :method => :delete, :confirm => "Are you sure want to delete Event?" %> |
+																<% if event.is_invited? %>
+																		Already Invited.
+																<% else %>
+																		<%= link_to "Send Reminder", event_send_invites_path(event) %>
+																<% end %>
+														</td>
+												<% end %>
+										</tr>	
 								<% end %>
 						</table>
 				<% end %>

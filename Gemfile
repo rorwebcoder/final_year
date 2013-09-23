@@ -50,3 +50,6 @@ gem "cancan"
 gem "paperclip", "~> 3.0"
 
 gem "pdf-reader"
+
+# To send sms to users/students
+gem 'twilio-ruby'
