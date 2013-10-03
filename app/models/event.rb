@@ -3,7 +3,7 @@ class Event < ActiveRecord::Base
 
 		# Validations
 		validates :title, presence: true
-		validates :description, presence: true
+		validates :description, presence: true, uniqueness: true
 		validates :start_date, presence: true
 		validates :end_date, presence: true
 		

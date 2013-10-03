@@ -53,3 +53,5 @@ gem "pdf-reader"
 
 # To send sms to users/students
 gem 'twilio-ruby'
+
+#gem 'whenever', :require => false

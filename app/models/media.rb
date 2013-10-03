@@ -6,9 +6,15 @@ class Media < ActiveRecord::Base
 		# Attachment handler : Paperclip
 		has_attached_file :document
 		validates_attachment :document, content_type: { content_type: "application/pdf" }
+		validates :document_file_name, uniqueness: true, presence: true
 		
 		# Associations
 		belongs_to :user
+		
+		def error_message(field_name)
+				h = {:document_file_name => "Select any file.", :document_content_type => "Select any PDF file."}
+				h[field_name]
+		end
 		
 		def extract_events
 				io     = open(full_url)
