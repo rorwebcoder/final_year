@@ -68,3 +68,12 @@
 .cboxIE #cboxMiddleRight {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF);
 }
+
+.message_report {
+    min-height: 250px;
+    min-width: 350px;
+}
+
+.report_info {
+    font-size: 17px;
+}

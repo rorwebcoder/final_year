@@ -1,4 +1,7 @@
 
-<% @users.each do |u| %>
-		<%= u.login.titleize %>: Message sent. <br />
-<% end %>
+<div class="message_report">
+		<% @users.each do |u| %>
+				<span class="report_info"><%= u.login.titleize %>: Message sent. <br />
+				</span>
+		<% end %>
+</div>
