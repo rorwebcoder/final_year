@@ -23,6 +23,7 @@
 												<td>
 														<% if media.is_processed %>
 																Already processed.
+																<%= link_to "Report", delivery_report_medias_path, :class => "ajax", :title => "Delivery Report", :style => "color: #AE4D5A;" %>
 														<% else %>
 																<%= link_to "Process", media_process_document_path(media), :style => "color: #AE4D5A;" %>
 														<% end %>

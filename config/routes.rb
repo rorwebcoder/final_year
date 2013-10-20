@@ -2,6 +2,9 @@ LoginDemo::Application.routes.draw do
   
   resources :medias do
     get 'process_document'
+    collection do
+    get 'delivery_report'
+    end
   end
   
   resources :events do

@@ -31,6 +31,11 @@ class MediasController < ApplicationController
 				redirect_to medias_path
 		end
 		
+		def delivery_report
+				@users = User.where("role != 'admin'")
+				render :layout => false
+		end
+		
 		private
 		def media_processed
 				if Media.exists?(params[:media_id])

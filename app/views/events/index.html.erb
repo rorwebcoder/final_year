@@ -31,6 +31,7 @@
 																<%= link_to "Edit", edit_event_path(event) %> | <%= link_to "Delete", event_path(event), :method => :delete, :confirm => "Are you sure want to delete Event?" %> |
 																<% if event.is_invited? %>
 																		Already Invited.
+																		<%= link_to "Report", delivery_report_medias_path, :class => "ajax", :title => "Delivery Report", :style => "color: #AE4D5A;" %>
 																<% else %>
 																		<%= link_to "Send Reminder", event_send_invites_path(event) %>
 																<% end %>
